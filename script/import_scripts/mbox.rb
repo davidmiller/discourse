@@ -16,7 +16,6 @@ class ImportScripts::Mbox < ImportScripts::Base
   def initialize(mbox_path)
     super()
     @mbox_dir = File.expand_path(mbox_path)
-    puts "(initialize) #{@mbox_dir}"
   end
 
   def execute
@@ -38,7 +37,6 @@ class ImportScripts::Mbox < ImportScripts::Base
   end
 
   def open_db
-    puts "(open_db) #{@mbox_dir}"
     SQLite3::Database.new("#{@mbox_dir}/index.db")
   end
 
