@@ -5,7 +5,7 @@ require File.expand_path(File.dirname(__FILE__) + "/mbox.rb")
 
 PREREQUISITES and INFORMATION:
 
-COOKIES
+COOKIES:
 in order to be able to extract users' email addresses correctly from the Google Group, you will need
 to have access to a Manager account of the Google Group. Having logged into Google Groups with this Manager account,
 export the cookies.txt from your browser (I used this Chrome extension to get the cookies.txt file:
@@ -17,8 +17,6 @@ Once you have the cookies.txt file, the easiest way to get it into your Docker c
 to a post in your discourse forum. You can get the URL from the post, and you need to prepend '/var/www/discourse/public' to the URL,
 which will be something like '/uploads/default/original/1X/245aa0cdc6847cf59647e1c7102e253e99d40b69.txt'
 
-
-
 INSTRUCTIONS:
 **run this script from INSIDE your Discourse Docker container**
 $ ssh <your-discourse-server>
@@ -27,6 +25,10 @@ $ ./launcher enter app
 # apt install sqlite3 libsqlite3-dev
 # gem install sqlite3
 # cd /var/www/discourse/script/import_scripts
+# get the google group script and the monkeypatched mbox.rb it requires
+# wget https://raw.githubusercontent.com/pacharanero/discourse/master/script/import_scripts/googlegroups.rb
+# wget https://raw.githubusercontent.com/pacharanero/discourse/master/script/import_scripts/mbox.rb
+# su discourse
 # ruby googlegroups.rb <name-of-your-google-group-goes-here>
 
 =end
