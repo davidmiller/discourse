@@ -22,7 +22,7 @@ INSTRUCTIONS:
 $ ssh <your-discourse-server>
 $ cd /var/discourse
 $ ./launcher enter app
-# apt install sqlite3 libsqlite3-dev
+# apt install sqlite3 libsqlite3-dev git  
 # gem install sqlite3
 # cd /var/www/discourse/script/import_scripts
 # get the google group script and the monkeypatched mbox.rb it requires
